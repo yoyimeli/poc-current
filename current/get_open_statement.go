@@ -3,14 +3,14 @@ package current
 import "encoding/json"
 
 type StatementSummary struct {
-	id     string
-	status string
-	siteID string
-	userID uint64
+	ID     string `json:"id"`
+	Status string `json:"status"`
+	SiteID string `json:"siteID"`
+	UserID int    `json:"userID"`
 }
 
 type Person struct {
-	id       string
+	ID       string
 	Name     string
 	Lastname string
 }
@@ -18,8 +18,8 @@ type Person struct {
 var one string = `
 	{
 		"id": "12345",
-		"status": open,
-		"siteID": MLM,
+		"status": "open",
+		"siteID": "MLM",
 		"userID": 12345
 	}
 `
@@ -27,23 +27,23 @@ var many string = `
 	[
 		{
 			"id": "12345",
-			"status": open,
-			"siteID": MLM,
+			"status": "open",
+			"siteID": "MLM",
 			"userID": 12345
 		},
 		{
 			"id": "54321",
-			"status": open,
-			"siteID": MLM,
+			"status": "open",
+			"siteID": "MLM",
 			"userID": 54321
-		},
+		}
 	]
 `
 
 var person string = `
 	{
-		"id": "98765"
-		"Name": "Jorge"
+		"id": "98765",
+		"Name": "Jorge",
 		"Lastname": "Numa"
 	}
 `
